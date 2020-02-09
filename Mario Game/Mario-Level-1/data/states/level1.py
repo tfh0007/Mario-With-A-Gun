@@ -877,15 +877,15 @@ class Level1(tools._State):
             self.moving_score_list.append(
                 score.Score(enemy.rect.centerx - self.viewport.x,
                             enemy.rect.y, 100))
-            #Uncomment to make goombas Hitable by stomping
-#            enemy.state = c.JUMPED_ON
-#            enemy.kill()
+ 
+            enemy.state = c.JUMPED_ON
+            enemy.kill()
              
- #           if enemy.name == c.GOOMBA:
-#                enemy.death_timer = self.current_time
- #               self.sprites_about_to_die_group.add(enemy)
-#            el
-            if enemy.name == c.KOOPA:
+            if enemy.name == c.GOOMBA:
+                enemy.death_timer = self.current_time
+                self.sprites_about_to_die_group.add(enemy)
+
+            elif enemy.name == c.KOOPA:
                 self.shell_group.add(enemy)
 
             self.mario.rect.bottom = enemy.rect.top
