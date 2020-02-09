@@ -1,4 +1,4 @@
-__author__ = 'justinarmstrong'
+
 
 import pygame as pg
 from .. import setup, tools
@@ -45,8 +45,8 @@ class Mario(pg.sprite.Sprite):
         self.allow_jump = True
         self.dead = False
         self.invincible = False
-        self.big = False
-        self.fire = False
+        self.big = True
+        self.fire = True
         self.allow_fireball = True
         self.in_transition_state = False
         self.hurt_invincible = False
