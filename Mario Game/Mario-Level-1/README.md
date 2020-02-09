@@ -1,9 +1,8 @@
-Super Mario Bros Level 1
+Super Mario Bros Level with a gun and some changes
 =============
 
-An attempt to recreate the first level of Super Mario Bros.
+An attempt to recreate the first level of Super Mario Bros with style.
 
-![screenshot](https://raw.github.com/justinmeister/Mario-Level-1/master/screenshot.png)
 
 CONTROLS: 
 
@@ -24,10 +23,3 @@ To install dependencies for Python 2.x:
 
 	pip install -r requirements.txt
 
-VIDEO DEMO:
-
-http://www.youtube.com/watch?v=HBbzYKMfx5Y
-   
-DISCLAIMER:
-
-This project is intended for non-commercial educational purposes.
