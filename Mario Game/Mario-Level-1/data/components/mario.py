@@ -498,12 +498,12 @@ class Mario(pg.sprite.Sprite):
 
 
     def shoot_fireball(self, powerup_group):
-        """Shoots fireball, allowing no more than two to exist at once"""
+        """Shoots fireball, allowing no more than one to exist at once"""
         setup.SFX['fireball'].play()
         self.fireball_count = self.count_number_of_fireballs(powerup_group)
 
         if (self.current_time - self.last_fireball_time) > 200:
-            if self.fireball_count < 2:
+            if self.fireball_count < 1:
                 self.allow_fireball = False
                 powerup_group.add(
                     powerups.FireBall(self.rect.right, self.rect.y, self.facing_right))
