@@ -1211,11 +1211,11 @@ class Level1(tools._State):
 
     def bounce_fireball(self, fireball):
         """Simulates fireball bounce off ground"""
-        fireball.y_vel = -8
+        fireball.y_vel = 0
         if fireball.direction == c.RIGHT:
-            fireball.x_vel = 15
+            fireball.x_vel = 30
         else:
-            fireball.x_vel = -15
+            fireball.x_vel = -30
 
         if fireball in self.powerup_group:
             fireball.state = c.BOUNCING

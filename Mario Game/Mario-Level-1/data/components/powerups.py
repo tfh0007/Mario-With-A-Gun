@@ -1,4 +1,3 @@
-__author__ = 'justinarmstrong'
 
 import pygame as pg
 from .. import constants as c
@@ -226,7 +225,7 @@ class Star(Powerup):
 
 
     def bouncing(self):
-        """Action when the star is bouncing around"""
+        """Action when the radiation is bouncing around"""
         self.animation()
 
         if self.direction == c.LEFT:
@@ -244,11 +243,11 @@ class FireBall(pg.sprite.Sprite):
         self.setup_frames()
         if facing_right:
             self.direction = c.RIGHT
-            self.x_vel = 12
+            self.x_vel = 30
         else:
             self.direction = c.LEFT
-            self.x_vel = -12
-        self.y_vel = 10
+            self.x_vel = -30
+        self.y_vel = 60
         self.gravity = .9
         self.frame_index = 0
         self.animation_timer = 0

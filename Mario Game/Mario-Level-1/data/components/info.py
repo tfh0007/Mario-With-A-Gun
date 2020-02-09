@@ -1,4 +1,3 @@
-__author__ = 'justinarmstrong'
 
 import pygame as pg
 from .. import setup
@@ -198,8 +197,8 @@ class OverheadInfo(object):
         game_label = []
         over_label = []
 
-        self.create_label(game_label, 'YOU GOT', 280, 300)
-        self.create_label(over_label, 'SHOT', 470, 300)
+        self.create_label(game_label, 'CHANGE DA WORLD', 100, 300)
+        self.create_label(over_label, 'MY FINAL MESSAGE GOODB YE', 100, 350)
 
         self.game_over_label = [game_label, over_label]
 
