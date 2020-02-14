@@ -16,6 +16,7 @@ class Character(pg.sprite.Sprite):
 class OverheadInfo(object):
     """Class for level information like score, coin total,
         and time remaining"""
+    # I think we can use this to change the level time
     def __init__(self, game_info, state):
         self.sprite_sheet = setup.GFX['text_images']
         self.coin_total = game_info[c.COIN_TOTAL]
@@ -114,7 +115,7 @@ class OverheadInfo(object):
         self.create_label(self.score_images, '000000', 75, 55)
 
 
-    def create_info_labels(self):
+    def create_info_labels(self, levelNumber = '1'):
         """Creates the labels that describe each info"""
         self.mario_label = []
         self.world_label = []
@@ -125,7 +126,7 @@ class OverheadInfo(object):
         self.create_label(self.mario_label, 'MAFIA MARIO', 75, 30)
         self.create_label(self.world_label, 'LEVEL', 450, 30)
         self.create_label(self.time_label, 'TIME', 625, 30)
-        self.create_label(self.stage_label, '  1', 472, 55)
+        self.create_label(self.stage_label, levelNumber, 472, 55)
 
         self.label_list = [self.mario_label,
                            self.world_label,
@@ -133,13 +134,13 @@ class OverheadInfo(object):
                            self.stage_label]
 
 
-    def create_load_screen_labels(self):
+    def create_load_screen_labels(self, levelNumber = '1'):
         """Creates labels for the center info of a load screen"""
         world_label = []
         number_label = []
 
         self.create_label(world_label, 'LEVEL', 280, 200)
-        self.create_label(number_label, '  1', 430, 200)
+        self.create_label(number_label, levelNumber, 430, 200)
 
         self.center_labels = [world_label, number_label]
 

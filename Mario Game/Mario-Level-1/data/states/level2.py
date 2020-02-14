@@ -17,7 +17,7 @@ from .. components import score
 from .. components import castle_flag
 
 
-class Level1(tools._State):
+class Level2(tools._State):
     def __init__(self):
         tools._State.__init__(self)
 
@@ -158,9 +158,7 @@ class Level1(tools._State):
         self.powerup_group = pg.sprite.Group()
         self.brick_pieces_group = pg.sprite.Group()
 
-        brick1  = bricks.Brick(858,  365)
-        brick2  = bricks.Brick(944,  365)
-        brick3  = bricks.Brick(1030, 365, c.SIXCOINS, self.coin_group)
+
         brick4  = bricks.Brick(3299, 365)
         brick5  = bricks.Brick(3385, 365)
         brick6  = bricks.Brick(3430, 193)
@@ -190,8 +188,7 @@ class Level1(tools._State):
         brick30 = bricks.Brick(7245, 365)
         brick31 = bricks.Brick(7331, 365)
 
-        self.brick_group = pg.sprite.Group(brick1,  brick2,
-                                           brick3,  brick4,
+        self.brick_group = pg.sprite.Group(brick4,
                                            brick5,  brick6,
                                            brick7,  brick8,
                                            brick9,  brick10,
@@ -210,7 +207,8 @@ class Level1(tools._State):
 
     def setup_coin_boxes(self):
         """Creates all the coin boxes and puts them in a sprite group"""
-        coin_box1  = coin_box.Coin_box(685, 365, c.COIN, self.coin_group)
+
+        
         coin_box2  = coin_box.Coin_box(901, 365, c.MUSHROOM, self.powerup_group)
         coin_box3  = coin_box.Coin_box(987, 365, c.MUSHROOM, self.powerup_group)
         coin_box4  = coin_box.Coin_box(943, 193, c.COIN, self.coin_group)
@@ -223,7 +221,7 @@ class Level1(tools._State):
         coin_box11 = coin_box.Coin_box(5531, 193, c.COIN, self.coin_group)
         coin_box12 = coin_box.Coin_box(7288, 365, c.COIN, self.coin_group)
 
-        self.coin_box_group = pg.sprite.Group(coin_box1,  coin_box2,
+        self.coin_box_group = pg.sprite.Group(coin_box2,
                                               coin_box3,  coin_box4,
                                               coin_box5,  coin_box6,
                                               coin_box7,  coin_box8,
@@ -1408,7 +1406,7 @@ class Level1(tools._State):
             self.flag_timer = self.current_time
         elif (self.current_time - self.flag_timer) > 2000:
             self.set_game_info_values()
-            self.next = c.LEVEL2
+            self.next = c.GAME_OVER
             self.sound_manager.stop_music()
             self.done = True
 

@@ -139,10 +139,12 @@ PLAYER2 = '2 player'
 #OVERHEAD INFO STATES
 MAIN_MENU = 'main menu'
 LOAD_SCREEN = 'loading screen'
+LOAD_SCREEN2 = 'loading screen2'
 LEVEL = 'level'
 GAME_OVER = 'game over'
 FAST_COUNT_DOWN = 'fast count down'
 END_OF_LEVEL = 'end of level'
+LEVEL2 = 'level2'
 
 
 #GAME INFO DICTIONARY KEYS
@@ -158,6 +160,7 @@ MARIO_DEAD = 'mario dead'
 #STATES FOR ENTIRE GAME
 MAIN_MENU = 'main menu'
 LOAD_SCREEN = 'load screen'
+LOAD_SCREEN2 = 'load screen 2' 
 TIME_OUT = 'time out'
 GAME_OVER = 'game over'
 LEVEL1 = 'level1'
