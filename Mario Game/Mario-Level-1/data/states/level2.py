@@ -36,7 +36,7 @@ class Level2(tools._State):
         self.flag_score_total = 0
 
         self.moving_score_list = []
-        self.overhead_info_display = info.OverheadInfo(self.game_info, c.LEVEL)
+        self.overhead_info_display = info.OverheadInfo(self.game_info, c.LEVEL, 101, '2')
         self.sound_manager = game_sound.Sound(self.overhead_info_display)
 
         self.setup_background()
@@ -1349,7 +1349,8 @@ class Level2(tools._State):
             self.next = c.MAIN_MENU
             self.game_info[c.CAMERA_START_X] = 0
         elif self.overhead_info_display.time == 0:
-            self.next = c.TIME_OUT
+            # Gets rid of the Time Over Glitch but removes Time Over completely
+            self.next = c.LOAD_SCREEN2
         else:
             if self.mario.rect.x > 3670 \
                     and self.game_info[c.CAMERA_START_X] == 0:

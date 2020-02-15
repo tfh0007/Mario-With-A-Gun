@@ -37,7 +37,8 @@ class Level1(tools._State):
         self.flag_score_total = 0
 
         self.moving_score_list = []
-        self.overhead_info_display = info.OverheadInfo(self.game_info, c.LEVEL)
+        #Sets values of top of screen
+        self.overhead_info_display = info.OverheadInfo(self.game_info, c.LEVEL, 300, '1')
         self.sound_manager = game_sound.Sound(self.overhead_info_display)
 
         self.setup_background()

@@ -18,7 +18,7 @@ class LoadScreen(tools._State):
 
         info_state = self.set_overhead_info_state()
 
-        self.overhead_info = info.OverheadInfo(self.game_info, info_state)
+        self.overhead_info = info.OverheadInfo(self.game_info, info_state, 1, '1')
         self.sound_manager = game_sound.Sound(self.overhead_info)
 
 

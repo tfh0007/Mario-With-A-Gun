@@ -18,7 +18,7 @@ class LoadScreen2(tools._State):
 
         info_state = self.set_overhead_info_state()
 
-        self.overhead_info = info.OverheadInfo(self.game_info, info_state)
+        self.overhead_info = info.OverheadInfo(self.game_info, info_state, 0, '2')
         self.sound_manager = game_sound.Sound(self.overhead_info)
 
 
@@ -28,7 +28,8 @@ class LoadScreen2(tools._State):
 
     def set_overhead_info_state(self):
         """sets the state to send to the overhead info object"""
-        return c.LOAD_SCREEN2
+        # Need to set to LOAD_SCREEN for information to show
+        return c.LOAD_SCREEN
 
 
     def update(self, surface, keys, current_time):
@@ -94,7 +95,7 @@ class TimeOut(LoadScreen2):
 
     def set_overhead_info_state(self):
         """Sets the state to send to the overhead info object"""
-        return c.TIME_OUT
+        return c.LOAD_SCREEN2
 
     def update(self, surface, keys, current_time):
         self.current_time = current_time
