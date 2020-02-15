@@ -55,7 +55,7 @@ class Level2(tools._State):
     def setup_background(self):
         """Sets the background image, rect and scales it to the correct
         proportions"""
-        self.background = setup.GFX['level_1']
+        self.background = setup.GFX['level_1_copy']
         self.back_rect = self.background.get_rect()
         self.background = pg.transform.scale(self.background,
                                   (int(self.back_rect.width*c.BACKGROUND_MULTIPLER),
@@ -1354,7 +1354,7 @@ class Level2(tools._State):
             if self.mario.rect.x > 3670 \
                     and self.game_info[c.CAMERA_START_X] == 0:
                 self.game_info[c.CAMERA_START_X] = 3440
-            self.next = c.LOAD_SCREEN
+            self.next = c.LOAD_SCREEN2
 
 
     def check_if_time_out(self):

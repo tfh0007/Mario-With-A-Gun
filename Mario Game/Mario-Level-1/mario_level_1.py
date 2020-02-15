@@ -4,6 +4,7 @@
 """
 This is an attempt to recreate the first level of
 Super Mario Bros for the with a twist.
+To run in Linux right click and choose run in terminal
 """
 
 import sys

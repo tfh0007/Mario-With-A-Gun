@@ -998,7 +998,7 @@ class Mario(pg.sprite.Sprite):
 
     def walking_to_castle(self):
         """State when Mario walks to the castle to end the level"""
-        self.max_x_vel = 5
+        self.max_x_vel = 2
         self.x_accel = c.WALK_ACCEL
 
         if self.x_vel < self.max_x_vel:

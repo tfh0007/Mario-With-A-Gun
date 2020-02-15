@@ -23,6 +23,7 @@ class Level1(tools._State):
 
     def startup(self, current_time, persist):
         """Called when the State object is created"""
+        
         self.game_info = persist
         self.persist = self.game_info
         self.game_info[c.CURRENT_TIME] = current_time
@@ -1408,7 +1409,7 @@ class Level1(tools._State):
             self.flag_timer = self.current_time
         elif (self.current_time - self.flag_timer) > 2000:
             self.set_game_info_values()
-            self.next = c.LEVEL2
+            self.next = c.LOAD_SCREEN2
             self.sound_manager.stop_music()
             self.done = True
 

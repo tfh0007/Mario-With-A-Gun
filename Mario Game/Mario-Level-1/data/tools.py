@@ -1,4 +1,4 @@
-__author__ = 'justinarmstrong'
+""" THis will let us change the buttons for mario's movement"""
 
 import os
 import pygame as pg
