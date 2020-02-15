@@ -36,7 +36,8 @@ class Level2(tools._State):
         self.flag_score_total = 0
 
         self.moving_score_list = []
-        self.overhead_info_display = info.OverheadInfo(self.game_info, c.LEVEL, 101, '2')
+        # Sets info such as level number and time limit
+        self.overhead_info_display = info.OverheadInfo(self.game_info, c.LEVEL, 201, '2')
         self.sound_manager = game_sound.Sound(self.overhead_info_display)
 
         self.setup_background()
@@ -55,7 +56,7 @@ class Level2(tools._State):
     def setup_background(self):
         """Sets the background image, rect and scales it to the correct
         proportions"""
-        self.background = setup.GFX['level_1_copy']
+        self.background = setup.GFX['level_2']
         self.back_rect = self.background.get_rect()
         self.background = pg.transform.scale(self.background,
                                   (int(self.back_rect.width*c.BACKGROUND_MULTIPLER),
@@ -87,16 +88,14 @@ class Level2(tools._State):
     def setup_pipes(self):
         """Create collideable rects for all the pipes"""
 
-        pipe1 = collider.Collider(1202, 452, 83, 82)
-        pipe2 = collider.Collider(1631, 409, 83, 140)
-        pipe3 = collider.Collider(1973, 366, 83, 170)
-        pipe4 = collider.Collider(2445, 366, 83, 170)
+        #pipe1 = collider.Collider(1202, 452, 83, 82)
+        #pipe2 = collider.Collider(1631, 409, 83, 140)
+       # pipe3 = collider.Collider(1973, 366, 83, 170)
+        #pipe4 = collider.Collider(2445, 366, 83, 170)
         pipe5 = collider.Collider(6989, 452, 83, 82)
         pipe6 = collider.Collider(7675, 452, 83, 82)
 
-        self.pipe_group = pg.sprite.Group(pipe1, pipe2,
-                                          pipe3, pipe4,
-                                          pipe5, pipe6)
+        self.pipe_group = pg.sprite.Group(pipe5, pipe6)
 
 
     def setup_steps(self):
@@ -1317,10 +1316,13 @@ class Level2(tools._State):
 
     def check_for_mario_death(self):
         """Restarts the level if Mario is dead"""
-        if self.mario.rect.y > c.SCREEN_HEIGHT and not self.mario.in_castle:
+        # added -50 so mario can die to acid
+        if self.mario.rect.y > c.SCREEN_HEIGHT - 100 and not self.mario.in_castle:
             self.mario.dead = True
             self.mario.x_vel = 0
             self.state = c.FROZEN
+            # added death jump when mario touches acid
+            self.mario.start_death_jump(self.game_info)
             self.game_info[c.MARIO_DEAD] = True
 
         if self.mario.dead:
