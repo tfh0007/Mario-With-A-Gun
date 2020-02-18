@@ -22,10 +22,18 @@ class Sound(object):
             pg.mixer.music.load(self.music_dict['main_theme'])
             pg.mixer.music.play()
             self.state = c.NORMAL
+
+# added to allow diffrent music for level 2
+        elif self.overhead_info.state == c.LEVEL2:
+            pg.mixer.music.load(self.music_dict['level2_main_theme'])
+            pg.mixer.music.play()
+            self.state = c.NORMAL
+
         elif self.overhead_info.state == c.GAME_OVER:
             pg.mixer.music.load(self.music_dict['game_over'])
             pg.mixer.music.play()
             self.state = c.GAME_OVER
+
 
 
     def update(self, game_info, mario):
@@ -44,9 +52,14 @@ class Sound(object):
                 self.play_music('invincible', c.MARIO_INVINCIBLE)
             elif self.mario.state == c.FLAGPOLE:
                 self.play_music('flagpole', c.FLAGPOLE)
-            elif self.overhead_info.time == 100:
+
+# I added the and clause
+            elif self.overhead_info.time == 100 and self.overhead_info.state == c.LEVEL:
                 self.play_music('out_of_time', c.TIME_WARNING)
 
+# I added this  for level 2 sped up sound
+            elif self.overhead_info.time == 100 and self.overhead_info.state == c.LEVEL2:
+                self.play_music('out_of_time', c.TIME_WARNING2)
 
         elif self.state == c.FLAGPOLE:
             if self.mario.state == c.WALKING_TO_CASTLE:
@@ -67,6 +80,13 @@ class Sound(object):
                 self.play_music('main_theme_sped_up', c.SPED_UP_NORMAL)
             elif self.mario.dead:
                 self.play_music('death', c.MARIO_DEAD)
+# added to allow sped up music for level 2
+        elif self.state == c. TIME_WARNING2:
+            if pg.mixer.music.get_busy() == 0:
+                self.play_music('level2_main_theme_sped_up', c.SPED_UP_NORMAL)
+            elif self.mario.dead:
+                self.play_music('death', c.MARIO_DEAD)
+
 
         elif self.state == c.SPED_UP_NORMAL:
             if self.mario.dead:

@@ -170,6 +170,7 @@ NORMAL = 'normal'
 STAGE_CLEAR = 'stage clear'
 WORLD_CLEAR = 'world clear'
 TIME_WARNING = 'time warning'
+TIME_WARNING2 = 'time warning2'
 SPED_UP_NORMAL = 'sped up normal'
 MARIO_INVINCIBLE = 'mario invincible'
 

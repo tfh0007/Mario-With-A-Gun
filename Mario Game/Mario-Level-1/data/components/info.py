@@ -258,8 +258,8 @@ class OverheadInfo(object):
             self.score = level_info[c.SCORE]
             self.update_score_images(self.score_images, self.score)
             self.update_coin_total(level_info)
-
-        elif self.state == c.LEVEL:
+# added the or level2 clause
+        elif (self.state == c.LEVEL or self.state == c.LEVEL2):
             self.score = level_info[c.SCORE]
             self.update_score_images(self.score_images, self.score)
             if level_info[c.LEVEL_STATE] != c.FROZEN \
@@ -350,8 +350,10 @@ class OverheadInfo(object):
             self.draw_main_menu_info(surface)
         elif self.state == c.LOAD_SCREEN:
             self.draw_loading_screen_info(surface)
-        elif self.state == c.LEVEL:
+            # added the or clause have a hud in the level 2
+        elif (self.state == c.LEVEL or self.state == c.LEVEL2):
             self.draw_level_screen_info(surface)
+
         elif self.state == c.GAME_OVER:
             self.draw_game_over_screen_info(surface)
         elif self.state == c.FAST_COUNT_DOWN:

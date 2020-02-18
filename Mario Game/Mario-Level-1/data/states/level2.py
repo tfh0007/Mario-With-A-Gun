@@ -37,7 +37,7 @@ class Level2(tools._State):
 
         self.moving_score_list = []
         # Sets info such as level number and time limit
-        self.overhead_info_display = info.OverheadInfo(self.game_info, c.LEVEL, 201, '2')
+        self.overhead_info_display = info.OverheadInfo(self.game_info, c.LEVEL2, 201, '2')
         self.sound_manager = game_sound.Sound(self.overhead_info_display)
 
         self.setup_background()
