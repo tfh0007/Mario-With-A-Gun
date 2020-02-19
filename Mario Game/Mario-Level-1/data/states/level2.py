@@ -73,16 +73,21 @@ class Level2(tools._State):
 
     def setup_ground(self):
         """Creates collideable, invisible rectangles over top of the ground for
-        sprites to walk on"""
-        ground_rect1 = collider.Collider(0, c.GROUND_HEIGHT,    2953, 60)
+        sprites to walk on x = starting position y = length of surface z = height"""
+
+        ground_rect1 = collider.Collider(0, c.GROUND_HEIGHT,    536, 60)
+        ground_rect02 = collider.Collider(804, c.GROUND_HEIGHT,    268, 60)
+        ground_rect03 = collider.Collider(1464, c.GROUND_HEIGHT,    1489, 60)
         ground_rect2 = collider.Collider(3048, c.GROUND_HEIGHT,  635, 60)
         ground_rect3 = collider.Collider(3819, c.GROUND_HEIGHT, 2735, 60)
         ground_rect4 = collider.Collider(6647, c.GROUND_HEIGHT, 2300, 60)
 
         self.ground_group = pg.sprite.Group(ground_rect1,
-                                           ground_rect2,
-                                           ground_rect3,
-                                           ground_rect4)
+        									ground_rect02,
+        									ground_rect2,
+        									ground_rect03,
+                                            ground_rect3,
+                                            ground_rect4)
 
 
     def setup_pipes(self):
@@ -157,9 +162,11 @@ class Level2(tools._State):
         self.powerup_group = pg.sprite.Group()
         self.brick_pieces_group = pg.sprite.Group()
 
+# x first next y  but y is inverted
+        brick4  = bricks.Brick(796, 500,  c.SIXCOINS, self.coin_group)
+        brick5  = bricks.Brick(1072, 500, c.SIXCOINS, self.coin_group)
 
-        brick4  = bricks.Brick(3299, 365)
-        brick5  = bricks.Brick(3385, 365)
+
         brick6  = bricks.Brick(3430, 193)
         brick7  = bricks.Brick(3473, 193)
         brick8  = bricks.Brick(3516, 193)
@@ -208,7 +215,8 @@ class Level2(tools._State):
         """Creates all the coin boxes and puts them in a sprite group"""
 
         
-        coin_box2  = coin_box.Coin_box(901, 365, c.MUSHROOM, self.powerup_group)
+        coin_box2  = coin_box.Coin_box(400, 365, c.MUSHROOM, self.powerup_group)
+
         coin_box3  = coin_box.Coin_box(987, 365, c.MUSHROOM, self.powerup_group)
         coin_box4  = coin_box.Coin_box(943, 193, c.COIN, self.coin_group)
         coin_box5  = coin_box.Coin_box(3342, 365, c.MUSHROOM, self.powerup_group)
@@ -279,7 +287,10 @@ class Level2(tools._State):
         goomba15 = enemies.Goomba()
 
         koopa0 = enemies.Koopa()
+        koopa1 = enemies.Koopa()
+        koopa2 = enemies.Koopa()
 
+        enemy_group0 = pg.sprite.Group(koopa0, koopa2)
         enemy_group1 = pg.sprite.Group(goomba0)
         enemy_group2 = pg.sprite.Group(goomba1)
         enemy_group3 = pg.sprite.Group(goomba2, goomba3)
@@ -291,7 +302,8 @@ class Level2(tools._State):
         enemy_group9 = pg.sprite.Group(goomba12, goomba13)
         enemy_group10 = pg.sprite.Group(goomba14, goomba15)
 
-        self.enemy_group_list = [enemy_group1,
+        self.enemy_group_list = [enemy_group0,
+        						 enemy_group1,
                                  enemy_group2,
                                  enemy_group3,
                                  enemy_group4,
@@ -313,6 +325,7 @@ class Level2(tools._State):
     def setup_checkpoints(self):
         """Creates invisible checkpoints that when collided will trigger
         the creation of enemies from the self.enemy_group_list"""
+        check0 = checkpoint.Checkpoint(402, "0")
         check1 = checkpoint.Checkpoint(510, "1")
         check2 = checkpoint.Checkpoint(1400, '2')
         check3 = checkpoint.Checkpoint(1740, '3')
@@ -327,7 +340,8 @@ class Level2(tools._State):
         check12 = checkpoint.Checkpoint(8775, '12')
         check13 = checkpoint.Checkpoint(2740, 'secret_mushroom', 360, 40, 12)
 
-        self.check_point_group = pg.sprite.Group(check1, check2, check3,
+        self.check_point_group = pg.sprite.Group(check0,
+        										 check1, check2, check3,
                                                  check4, check5, check6,
                                                  check7, check8, check9,
                                                  check10, check11, check12,
