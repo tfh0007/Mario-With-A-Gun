@@ -1,4 +1,4 @@
-""" THis will let us change the buttons for mario's movement"""
+""" This will let us change the buttons for mario's movement"""
 
 import os
 import pygame as pg

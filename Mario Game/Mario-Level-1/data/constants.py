@@ -1,4 +1,5 @@
 __author__ = 'justinarmstrong'
+__author2__ = 'Thomas-Hansknecht'
 
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 800

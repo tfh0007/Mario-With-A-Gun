@@ -1,4 +1,5 @@
 __author__ = 'justinarmstrong'
+__author2__ = 'Thomas-Hansknecht'
 
 import pygame as pg
 from . import setup

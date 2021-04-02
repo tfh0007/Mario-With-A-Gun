@@ -1,4 +1,5 @@
 __author__ = 'justinarmstrong'
+__author2__ = 'Thomas-Hansknecht'
 
 from . import setup,tools
 from .states import main_menu,load_screen,load_screen2,level1,level2
