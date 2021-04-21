@@ -9,8 +9,8 @@ A simple game that is a reimagining of the 1985 Super Mario Bros. The game incor
 
 * Learned how to create logic for movement of player and develop in game collision physics for background obejcts and enemies
 
-* Had to work with a team to complete the task
+* Worked with a team to complete the project
 
 * There was a limited deadline and my team was forced to make changes to cater to this deadline
 
-* Had to implement external custom resources such as soundtracks and visuals
+* Implemented external custom resources such as soundtracks and visuals
