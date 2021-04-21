@@ -1,7 +1,7 @@
 # Mario-With-A-Gun
 A simple game that is a reimagining of the 1985 Super Mario Bros. The game incorporates guns and takes place in a nuclear apocalyptic setting. Was a project submitted for a hackathon competition. Created with a group in Python using Pygame 
 
-## What was learned and how the proejct was made
+## What was learned and how the project was made
 
 * Used Sprite sheets to animate the player and enemies
 
