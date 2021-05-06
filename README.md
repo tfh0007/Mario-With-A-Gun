@@ -3,7 +3,7 @@
 - The game incorporates guns and takes place in a nuclear apocalyptic setting. Was a project submitted for a hackathon competition. 
 - Created with a group in Python using Pygame 
 
-## What was Learned and How the Project was Made
+## What was Learned
 
 - Used Sprite sheets to animate the player and enemies
 
