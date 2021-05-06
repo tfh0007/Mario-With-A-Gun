@@ -1,7 +1,7 @@
 Super Mario Bros Level with a gun and some changes
 =============
 
-An attempt to recreate the first level of Super Mario Bros with style.
+An attempt to recreate the first level of Super Mario Bros with a different atmosphere.
 
 
 CONTROLS: 
