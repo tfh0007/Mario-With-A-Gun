@@ -1,6 +1,5 @@
 # About This Project
-- A simple game that is a reimagining of the 1985 Super Mario Bros. 
-- The game incorporates guns and takes place in a nuclear apocalyptic setting. Was a project submitted for a hackathon competition. 
+- Was a project submitted for a hackathon competition. 
 - Created with a group in Python using Pygame 
 
 ## What was Learned
