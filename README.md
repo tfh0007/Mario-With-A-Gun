@@ -12,6 +12,6 @@
 
 - Worked with a team to complete the project
 
-- There was a limited deadline and my team was forced to make changes to cater to this deadline
+- There was a limited deadline and the team was forced to make changes to cater to this deadline
 
 - Implemented external custom resources such as soundtracks and visuals
